@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="First Component" icon-name="utility:fallback">
+        <div class="slds-m-top_small slds-p-around_small">
+            <p>Hello {userName}. This is my first LWC.</p>
+            <lightning-input type="text" value={userName} onchange={handleOnChange}></lightning-input>
+        </div>
+    </lightning-card>
+</template>

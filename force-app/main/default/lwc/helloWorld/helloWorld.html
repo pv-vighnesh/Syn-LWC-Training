@@ -1,0 +1,16 @@
+<template>
+        <lightning-card title="First Component" icon-name="utility:fallback">
+            <div class="slds-m-top_small slds-p-around_small">
+                <p>Hello, {userName}. This is Synthesis LWC Training.</p>
+                <lightning-input type="text" value={userName} onchange={handleOnChange}></lightning-input>
+            </div>
+            <div class="slds-m-top_small slds-p-left_small dark-background">
+                <lightning-icon class="slds-m-right_small" icon-name="action:web_link" alternative-text="Connected" size="xx-small"
+                    title="xx-small size">
+                </lightning-icon>
+                <lightning-formatted-url value="https://hashnode.com/@pv-vighnesh" 
+                    tooltip="PV in the clouds" label="Read about every session here" target="_blank">
+                </lightning-formatted-url>
+            </div>
+        </lightning-card>
+</template>

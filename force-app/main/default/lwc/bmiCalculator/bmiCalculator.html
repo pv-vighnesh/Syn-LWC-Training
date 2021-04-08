@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="BMI Calculator" icon-name="standard:customer_360" class="slds-text-align_center">
+        <div class="slds-p-around_medium">
+            <lightning-input type="number" name="weight" value={weight} label="Weight" placeholder="in kg" onchange={handleWeight}></lightning-input>
+            <lightning-input type="number" name="height" value={height} label="Height" placeholder="in cm" onchange={handleHeight}></lightning-input>
+       </div>
+       <div class="slds-grid slds-p-around_medium">
+            <lightning-button class="slds-col" variant="brand-outline" label="Calculate" onclick={handleCalculate} ></lightning-button>
+            <lightning-button class="slds-col" variant="brand-outline" label="Clear" onclick={handleClear} ></lightning-button>
+       </div>
+       <div class="slds-text-heading_medium background">
+           <p class="slds-text-color_inverse">BMI = {result}</p>
+       </div>
+    </lightning-card>
+</template>

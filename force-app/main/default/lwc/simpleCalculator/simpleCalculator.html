@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Simple Calculator" icon-name="utility:advanced_function" class="slds-text-align_center">
+        <div class="slds-p-around_medium">
+            <lightning-input type="number" name="firstNum" value={firstNumber} placeholder="First Number" onchange={handleFirstNum}></lightning-input>
+            <lightning-input type="number" name="secondNum" value={secondNumber} placeholder="Second Number" onchange={handleSecondNum}></lightning-input>
+            <lightning-input type="text" name="result" value={result} placeholder="Result" readonly></lightning-input>
+        </div>
+        <div class="slds-grid slds-p-around_medium">
+            <lightning-button label="Add" icon-name="utility:add" size="small" onclick={handleAdd} class="slds-col"></lightning-button>
+            <lightning-button label="Subtract" icon-name="utility:dash" size="small" onclick={handleSub} class="slds-col"></lightning-button>
+            <lightning-button label="Multiply" icon-name="utility:close" size="small" onclick={handleMul} class="slds-col"></lightning-button>
+            <lightning-button label="Divide" icon-name="utility:percent" size="small" onclick={handleDiv} class="slds-col"></lightning-button>
+        </div>
+        <div class="slds-grid slds-p-around_medium">
+            <lightning-button class="slds-col" variant="brand" label="Clear" onclick={handleclear} ></lightning-button>
+            <lightning-button-stateful class="slds-col" label-when-off="Show History" label-when-on="Hide History" variant="brand"  selected={isSelected} onclick={handleClick}></lightning-button-stateful>
+            <lightning-button class="slds-col" label="Clear History" variant="brand" onclick={handleClearHistory}></lightning-button>
+        </div>
+        <template if:true={isSelected}>
+            <div class="slds-text-align_center">Previous Calculations
+                <ul>
+                    <template iterator:res={historyData}>
+                        <li key={res.value}>
+                            {res.value}
+                        </li>
+                    </template>
+                </ul>
+               <!--<p>Previous Results: {historyData}<br></p>-->
+            </div>
+        </template>
+    </lightning-card> 
+</template> 
