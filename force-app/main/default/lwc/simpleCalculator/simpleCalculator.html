@@ -21,7 +21,9 @@
                 <ul>
                     <template iterator:res={historyData}>
                         <li key={res.value}>
+                            <div if:true={res.first} class="slds-border_top background"></div>
                             {res.value}
+                            <div if:true={res.last} class="slds-border_bottom background"></div>
                         </li>
                     </template>
                 </ul>
