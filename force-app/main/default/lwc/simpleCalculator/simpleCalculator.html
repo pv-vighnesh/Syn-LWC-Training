@@ -16,8 +16,9 @@
             <lightning-button-stateful class="slds-col" label-when-off="Show History" label-when-on="Hide History" variant="brand"  selected={isSelected} onclick={handleClick}></lightning-button-stateful>
             <lightning-button class="slds-col" label="Clear History" variant="brand" onclick={handleClearHistory}></lightning-button>
         </div>
-        <template if:true={isSelected}>
+        <template if:true={isSelected}> 
             <div class="slds-text-align_center">Previous Calculations
+                <!--Iterator-->
                 <ul>
                     <template iterator:res={historyData}>
                         <li key={res.value}>
@@ -27,7 +28,13 @@
                         </li>
                     </template>
                 </ul>
-               <!--<p>Previous Results: {historyData}<br></p>-->
+            <!--<ul class="slds-m-around_medium">
+                <template for:each={historyData} for:item="res">
+                    <li key={res}>
+                        {res}
+                    </li>
+                </template>
+            </ul>-->
             </div>
         </template>
     </lightning-card> 
