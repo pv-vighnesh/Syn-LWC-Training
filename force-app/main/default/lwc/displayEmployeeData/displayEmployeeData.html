@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Employee Details from another component">
+        <div class="slds-text-heading_medium slds-text-align_center">Employee Details</div><br/>
+                <lightning-formatted-text value={name} ></lightning-formatted-text><br/><br/>
+                <lightning-formatted-phone value={phone} ></lightning-formatted-phone><br/><br/>
+                <lightning-formatted-email value={mail}></lightning-formatted-email><br/><br/>
+                <lightning-formatted-number value={ctc} format-style="currency" currency-code="EUR" ></lightning-formatted-number>
+    </lightning-card>
+</template>

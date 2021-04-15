@@ -8,6 +8,7 @@
         </div>
         <div class="slds-grid slds-p-around_medium">
             <lightning-button-stateful class="slds-col" label-when-off="Show Details" label-when-on="Hide Details" variant="brand"  selected={isSelected} onclick={handleClick}></lightning-button-stateful> 
+            <lightning-button class="slds-col" label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
         </div>
         <template if:true={isSelected}>
             <div class="slds-text-align_center"> 

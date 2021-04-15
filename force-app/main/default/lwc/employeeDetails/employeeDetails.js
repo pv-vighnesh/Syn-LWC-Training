@@ -1,4 +1,6 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
+import { publish, MessageContext } from 'lightning/messageService';
+import myMsgService from '@salesforce/messageChannel/empdata_transfer__c';
 
 export default class EmployeeDetails extends LightningElement {
     name;
@@ -7,6 +9,8 @@ export default class EmployeeDetails extends LightningElement {
     ctc;
     isShown = false;
     isSelected = false;
+
+    @wire(MessageContext) messageContext;
 
     handleName(event) {
         this.name = event.target.value;
@@ -28,5 +32,10 @@ export default class EmployeeDetails extends LightningElement {
         if(isSelected) {
             this.isShown = true;
         }
+    }
+    handleSubmit() {
+        console.log('Submit is clicked');
+        const payload = {message1:this.name, message2:this.phone, message3:this.mail, message4:this.ctc};
+        publish(this.messageContext, myMsgService, payload);
     }
 }
