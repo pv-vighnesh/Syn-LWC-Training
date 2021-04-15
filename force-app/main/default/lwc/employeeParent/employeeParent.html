@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent to Child">
+        <template for:each={empDetails} for:item=emp>
+            <div key={emp.id}>
+                <c-employee-child details={emp}></c-employee-child>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,3 +1,5 @@
-import { LightningElement } from 'lwc';
+import { api, LightningElement } from 'lwc';
 
-export default class ChildComponent extends LightningElement {}
+export default class ChildComponent extends LightningElement {
+
+}
