@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Cases">
+        <template if:true={cases}>
+            <lightning-datatable key-field="Id" data={cases} columns={columns} default-sort-direction={defaultSortDirection} 
+                sorted-direction={sortDirection} sorted-by={sortedBy} onsort={onHandleSort} hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

@@ -1,5 +1,6 @@
 <template>
     <lightning-card title="Child to Parent ">
+        <div class={positiveIcon}></div>
         <h1 class="slds-text-heading_medium slds-text-align_center">Page Number: {pageNumber}</h1>
         <c-child-component slot="footer" onprevious={handlePrevious} onnext={handleNext}></c-child-component>
     </lightning-card>
