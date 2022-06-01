@@ -7,6 +7,16 @@ const columns = [{
         sortable : true
     },
     {
+        label    : 'Status',
+        fieldName: 'Status',
+        sortable : true
+    },
+    {
+        label    : 'Origin',
+        fieldName: 'Origin',
+        sortable : true
+    },
+    {
         label    : 'LastModifiedDate',
         fieldName: 'LastModifiedDate',
         sortable : true
