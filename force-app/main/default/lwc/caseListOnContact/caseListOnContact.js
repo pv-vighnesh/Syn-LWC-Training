@@ -34,9 +34,17 @@ export default class CaseListOnContact extends LightningElement {
     sortDirection = 'desc';
     sortedBy;
 
+    noOfRecordsToDisplay;
+    isSelected = false;
+
+    connectedCallback() {
+        this.noOfRecordsToDisplay = 6;
+    }
+
     // Fetching Cases related to Contact
     @wire(getCasesRelatedToContact, {
-        contactId: '$recordId'
+        contactId: '$recordId',
+        noOfRecordsToDisplay: '$noOfRecordsToDisplay'
     }) wiredContactRecord({
         data,
         error
@@ -46,6 +54,14 @@ export default class CaseListOnContact extends LightningElement {
         } else if (error) {
             console.log('error' + JSON.stringify(error));
         }
+    }
+
+    handleViewMore() {
+        this.noOfRecordsToDisplay = 150;
+    }
+
+    handleViewLess() {
+        this.noOfRecordsToDisplay = 6;
     }
 
     // Sorting

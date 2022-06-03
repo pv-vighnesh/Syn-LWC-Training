@@ -1,9 +1,14 @@
 <template>
-    <lightning-card title="Cases">
+    <lightning-card title="Closed Cases" icon-name="standard:case_wrap_up">
         <template if:true={cases}>
             <lightning-datatable key-field="Id" data={cases} columns={columns} default-sort-direction={defaultSortDirection} 
                 sorted-direction={sortDirection} sorted-by={sortedBy} onsort={onHandleSort} hide-checkbox-column>
             </lightning-datatable>
+            <hr color="grey">
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="base" label="View More" class="slds-p-right_medium" onclick={handleViewMore}></lightning-button>
+                <lightning-button variant="base" label="View Less" class="slds-p-left_medium" onclick={handleViewLess}></lightning-button>
+            </div>
         </template>
     </lightning-card>
 </template>
